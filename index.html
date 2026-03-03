@@ -17,13 +17,29 @@
                     <p class="logo-subtitle">Shelter for pets in Boston</p>
                 </div>
 
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#" class="nav-link link-active">About the shelter</a></li>
-                    <li><a href="#" class="nav-link">Our pets</a></li>
-                    <li><a href="#" class="nav-link">Help the shelter</a></li>
-                    <li><a href="#" class="nav-link">Contacts</a></li>
-                </ul>
+            <nav class="nav">
+                <!-- скрытый переключатель -->
+                <input class="burger-toggle" type="checkbox" id="burger-toggle">
+
+                <!-- кнопка-бургер (label кликает по checkbox) -->
+                 <label class="burger" for="burger-toggle" aria-label="Open menu">
+                    <span class="burger-line"></span>
+                 </label>
+
+                 <!-- затемнение (клик = закрыть) -->
+                <label class="overlay" for="burger-toggle"></label>
+
+                <!-- выезжающее меню -->
+                 <div class="menu">
+                    <ul class="nav-list">
+                        <li><a href="#" class="nav-link link-active">About the shelter</a></li>
+                        <li><a href="#" class="nav-link">Our pets</a></li>
+                        <li><a href="#" class="nav-link">Help the shelter</a></li>
+                        <li><a href="#" class="nav-link">Contacts</a></li>
+                    </ul>
+                </div>
+            </nav>
+                
             </nav>
             </div>
         </header>
