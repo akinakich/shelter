@@ -540,3 +540,124 @@ body {
     grid-row: 2;
   }
 }
+
+.help {
+  background: #FFF;
+  padding: 80px 0 100px;
+}
+
+.help .container {
+  padding: 0 69px;
+}
+
+.help-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.help-title {
+    color: var(--color-dark-l, #545454);
+    text-align: center;
+    max-width: 310px;
+    margin: 0;
+
+    /* h3 */
+    font-family: Georgia;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 45.5px */
+    letter-spacing: 2.1px;
+}
+
+.help-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px 120px; /* row-gap / column-gap (подгони если надо) */
+  justify-items: center;
+}
+
+.help-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* как в макете */
+  text-align: center;
+}
+
+.help-item img {
+  width: 60px;   /* обычно так в макете */
+  height: 60px;
+}
+
+.item-text {
+  margin: 0;
+  color: #545454;
+  font-family: Georgia;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+
+/* TABLET */
+@media (max-width: 1279px) {
+  .help {
+    padding: 80px 0 100px;
+  }
+
+  .help .container {
+    padding: 0 30px; /* на планшете в макете обычно меньше */
+  }
+
+  .help-title {
+    font-size: 35px; /* можно оставить */
+    letter-spacing: 2.1px;
+  }
+
+  .help-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 55px 60px; /* уменьшаем горизонтальный gap */
+  }
+
+  .help-item {
+    gap: 30px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .help {
+    padding: 42px 0 42px; /* чаще всего так в макете shelter */
+  }
+
+  .help .container {
+    padding: 0 10px;
+  }
+
+  .help-title {
+    font-size: 25px;
+    letter-spacing: 1.5px;
+    max-width: 260px;
+  }
+
+  .help-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на мобиле */
+    gap: 30px 30px;
+  }
+
+  .help-item {
+    gap: 20px;
+  }
+
+  .help-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .item-text {
+    font-size: 15px;
+    letter-spacing: 0;
+  }
+}
