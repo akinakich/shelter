@@ -11,10 +11,87 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    outline: 1px solid red;
     padding: 0 40px;
+
 }
 
 .start-screen {
   min-height: 908px; /* как в макете */
+}
+
+.header {
+    padding-top: 30px;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-dark-s, #CDCDCD);
+
+    font-family: Arial;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.link-active {
+    color: var(--color-light-s, #FAFAFA);
+    border-bottom: 3px solid #F1CDB3;
+
+    padding-bottom: 4px;
+    font-family: Arial;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.logo-title {
+    color: var(--color-primary, #F1CDB3);
+    text-decoration: none;
+
+    font-family: Georgia;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.92px;
+}
+
+.logo-subtitle {
+    color: var(--color-light-xl, #FFF);
+
+    font-family: Arial;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.logo-subtitle {
+    margin: 0;
+}
+
+.start-screen {
+  background:
+    url("noise_transparent.png") repeat,
+    radial-gradient(237.5% 111.8% at 0% 0%, #5B483A 0%, #262425 100%),
+    #211F20;
 }
