@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    outline: 1px solid red;
+    padding: 0 40px;
+}
+
+.start-screen {
+  min-height: 908px; /* как в макете */
+}
