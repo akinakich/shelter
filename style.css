@@ -335,3 +335,208 @@ body {
   gap: 25px;
   max-width: 430px;
 }
+
+.pets {
+    background: var(--color-light-l, #F6F6F6);
+    padding: 80px 0 100px;
+}
+
+.pets-content {
+    display: flex;
+    max-width: 1200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 53px;
+}
+
+.pets-title {
+    max-width: 400px;
+    color: var(--color-dark-l, #545454);
+    text-align: center;
+    margin: 0;
+
+    /* h3 */
+    font-family: Georgia;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 45.5px */
+    letter-spacing: 2.1px;
+}
+
+.pets-cards {
+    display: flex;
+    gap: 90px;
+}
+
+.arrow-button {
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border-radius: 100px;
+    border: 2px solid #F1CDB3;
+    background: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+}
+
+.arrow-button img {
+  width: 14px;   /* можно 14–18, под твой svg */
+  height: 6px;   /* или auto, если криво */
+}
+
+.pets-button {
+    display: flex;
+    padding: 15px 45px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 100px;
+    background: var(--color-primary, #F1CDB3);
+    text-decoration: none;
+
+    color: var(--color-dark-3xl, #292929);
+    font-family: Georgia;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 22.1px */
+    letter-spacing: 1.02px;
+}
+
+.card {
+  width: 270px;
+  background: #FAFAFA;
+  border-radius: 9px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.pets-image {
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 9px 9px 0 0;
+}
+
+.pets-text {
+  margin: 30px 0;
+  color: #545454;
+  font-family: Georgia;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 15px 45px;
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  background: transparent;   /* или #FAFAFA — но лучше transparent */
+  text-decoration: none;
+
+  color: #292929;
+  font-family: Georgia;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 1.02px;
+}
+
+/* TABLET: до 1279px — показываем 2 карточки */
+@media (max-width: 1279px) {
+  /* скрываем 3-ю карточку (Woody) */
+  .pets-cards .card:nth-child(3) {
+    display: none;
+  }
+
+  /* подстраиваем расстояния */
+  .pets-cards {
+    gap: 40px; /* можно 40, если в макете так */
+  }
+
+  .slider {
+    gap: 12px; /* чтобы стрелки не уезжали */
+  }
+}
+
+/* MOBILE: до 767px — 1 карточка + стрелки снизу */
+@media (max-width: 767px) {
+  .pets {
+    padding: 60px 0;
+  }
+
+  .pets-title {
+    font-size: 25px;
+    letter-spacing: 1.5px;
+    max-width: 300px;
+  }
+
+  /* оставляем 1 карточку */
+  .pets-cards .card:nth-child(2),
+  .pets-cards .card:nth-child(3) {
+    display: none;
+  }
+
+  /* перестраиваем слайдер: карточка сверху, стрелки снизу */
+  .slider {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* карточки сверху */
+  .pets-cards {
+    gap: 0;
+    justify-content: center;
+  }
+
+  /* стрелки вниз и рядом */
+  .arrow-button {
+    order: 2;
+  }
+
+  /* делаем “ряд стрелок” через контейнер slider */
+  .slider {
+    position: relative;
+  }
+
+  /* чтобы две кнопки стали рядом — добавим им обертку невозможно без HTML,
+     поэтому делаем проще: превращаем slider в grid на мобилке */
+  .slider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .pets-cards {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .arrow-button:first-child {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .arrow-button:last-child {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
