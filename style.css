@@ -17,7 +17,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* на мобилке важно */
+    padding: 0 20px;
 
 
 }
@@ -29,7 +29,7 @@ body {
 }
 
 .start-screen {
-  min-height: 908px; /* как в макете */
+  min-height: 908px;
 }
 
 .header {
@@ -156,7 +156,6 @@ body {
     border-radius: 100px;
     background: var(--color-primary, #F1CDB3);
 
-    /* make a friend */
     text-decoration: none;
     color: var(--color-dark-3xl, #292929);
     font-family: Georgia;
@@ -168,14 +167,12 @@ body {
 }
 
 
-/* скрываем checkbox */
 .burger-toggle {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-/* бургер по умолчанию скрыт (десктоп) */
 .burger {
   display: none;
   width: 44px;
@@ -205,12 +202,10 @@ body {
 .burger-line::before { left: -8px; }
 .burger-line::after  { left: 8px; }
 
-/* overlay скрыт по умолчанию */
 .overlay {
   display: none;
 }
 
-/* Мобилка */
 @media (max-width: 767px) {
   .burger { display: inline-flex; }
   .nav-link { color: #CDCDCD; }
@@ -224,15 +219,14 @@ body {
     background: #292929;
     transform: translateX(100%);
     transition: transform 0.25s ease;
-    padding: 0;               /* убираем большие паддинги */
+    padding: 0;
     z-index: 20;
 
-    display: flex;            /* центрируем */
+    display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  /* список по центру */
   .nav-list {
     display: flex;
     flex-direction: column;
@@ -244,19 +238,16 @@ body {
     text-align: center;
   }
 
-  /* крупные ссылки */
   .nav-link {
     font-size: 32px;
     line-height: 1.6;
   }
 
-  /* активная линия по центру */
   .link-active {
     border-bottom: 3px solid #F1CDB3;
     padding-bottom: 6px;
   }
 
-  /* позиция бургера как в макете */
   .burger {
     position: fixed;
     top: 30px;
@@ -306,7 +297,7 @@ body {
     font-size: 35px;
     font-style: normal;
     font-weight: 400;
-    line-height: 130%; /* 45.5px */
+    line-height: 130%;
     letter-spacing: 2.1px;
 }
 
@@ -320,7 +311,7 @@ body {
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
-    line-height: 160%; /* 24px */
+    line-height: 160%;
 }
 
 .about-image {
@@ -363,12 +354,11 @@ body {
     text-align: center;
     margin: 0;
 
-    /* h3 */
     font-family: Georgia;
     font-size: 35px;
     font-style: normal;
     font-weight: 400;
-    line-height: 130%; /* 45.5px */
+    line-height: 130%;
     letter-spacing: 2.1px;
 }
 
@@ -394,8 +384,8 @@ body {
 }
 
 .arrow-button img {
-  width: 14px;   /* можно 14–18, под твой svg */
-  height: 6px;   /* или auto, если криво */
+  width: 14px;
+  height: 6px;
 }
 
 .pets-button {
@@ -447,7 +437,7 @@ body {
   padding: 15px 45px;
   border-radius: 100px;
   border: 2px solid #F1CDB3;
-  background: transparent;   /* или #FAFAFA — но лучше transparent */
+  background: transparent;
   text-decoration: none;
 
   color: #292929;
@@ -457,24 +447,23 @@ body {
   letter-spacing: 1.02px;
 }
 
-/* TABLET: до 1279px — показываем 2 карточки */
 @media (max-width: 1279px) {
-  /* скрываем 3-ю карточку (Woody) */
+
   .pets-cards .card:nth-child(3) {
     display: none;
   }
 
-  /* подстраиваем расстояния */
+
   .pets-cards {
-    gap: 40px; /* можно 40, если в макете так */
+    gap: 40px;
   }
 
   .slider {
-    gap: 12px; /* чтобы стрелки не уезжали */
+    gap: 12px;
   }
 }
 
-/* MOBILE: до 767px — 1 карточка + стрелки снизу */
+
 @media (max-width: 767px) {
   .pets {
     padding: 60px 0;
@@ -486,36 +475,35 @@ body {
     max-width: 300px;
   }
 
-  /* оставляем 1 карточку */
+
   .pets-cards .card:nth-child(2),
   .pets-cards .card:nth-child(3) {
     display: none;
   }
 
-  /* перестраиваем слайдер: карточка сверху, стрелки снизу */
+
   .slider {
     flex-direction: column;
     gap: 20px;
   }
 
-  /* карточки сверху */
+
   .pets-cards {
     gap: 0;
     justify-content: center;
   }
 
-  /* стрелки вниз и рядом */
+
   .arrow-button {
     order: 2;
   }
 
-  /* делаем “ряд стрелок” через контейнер slider */
+  
   .slider {
     position: relative;
   }
 
-  /* чтобы две кнопки стали рядом — добавим им обертку невозможно без HTML,
-     поэтому делаем проще: превращаем slider в grid на мобилке */
+
   .slider {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -568,14 +556,14 @@ body {
     font-size: 35px;
     font-style: normal;
     font-weight: 400;
-    line-height: 130%; /* 45.5px */
+    line-height: 130%;
     letter-spacing: 2.1px;
 }
 
 .help-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 55px 120px; /* row-gap / column-gap (подгони если надо) */
+  gap: 55px 120px;
   justify-items: center;
 }
 
@@ -583,12 +571,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px; /* как в макете */
+  gap: 30px;
   text-align: center;
 }
 
 .help-item img {
-  width: 60px;   /* обычно так в макете */
+  width: 60px;
   height: 60px;
 }
 
@@ -608,7 +596,7 @@ body {
   }
 
   .help .container {
-    padding: 0 30px; /* на планшете в макете обычно меньше */
+    padding: 0 30px;
   }
 
   .help-title {
@@ -618,7 +606,7 @@ body {
 
   .help-list {
     grid-template-columns: repeat(3, 1fr);
-    gap: 55px 60px; /* уменьшаем горизонтальный gap */
+    gap: 55px 60px; 
   }
 
   .help-item {
@@ -629,7 +617,7 @@ body {
 /* MOBILE */
 @media (max-width: 767px) {
   .help {
-    padding: 42px 0 42px; /* чаще всего так в макете shelter */
+    padding: 42px 0 42px; 
   }
 
   .help .container {
@@ -643,7 +631,7 @@ body {
   }
 
   .help-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 колонки на мобиле */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 30px 30px;
   }
 
@@ -659,5 +647,184 @@ body {
   .item-text {
     font-size: 15px;
     letter-spacing: 0;
+  }
+}
+
+.donation {
+  background: var(--color-light-l, #F6F6F6);
+  padding: 80px 0 100px; 
+}
+
+.donation-content {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.donation .container {
+  padding-left: 131px;
+  padding-right: 132px;
+
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 60px;               
+}
+
+.donation-title {
+    max-width: 300px;
+    margin: 0;
+    color: var(--color-dark-l, #545454);
+
+    font-family: Georgia;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; 
+    letter-spacing: 2.1px;
+}
+
+.donation-subtitle {
+    color: var(--color-dark-l, #545454);
+    margin: 0;
+
+    font-family: Georgia;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; 
+    letter-spacing: 0.9px;
+}
+
+.credit-card {
+    display: flex;
+    gap: 10px;
+    background: #F1CDB3;
+    border-radius: 9px;
+    align-items: center;
+    padding: 10px 15px;
+}
+.credit-card-text {
+    margin: 0;
+    color: var(--color-dark-l, #545454);
+
+    font-family: Georgia;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%; 
+    letter-spacing: 1.2px;
+}
+
+.donation-text {
+    color: var(--color-dark-m, #B2B2B2);
+    margin: 0;
+
+    font-family: Arial;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 18px; 
+}
+
+.donation-image {
+  width: 505px;
+  height: auto;
+}
+
+@media (max-width: 1279px) {
+  .donation {
+    padding: 80px 0 100px;
+  }
+
+ 
+  .donation .container {
+    padding-left: 30px;
+    padding-right: 30px;
+
+  
+    flex-direction: column;
+    gap: 60px;
+  }
+
+
+  .donation-image {
+    width: 505px;    
+    max-width: 100%;
+  }
+
+
+  .donation-content {
+    align-items: center;
+    text-align: center; 
+  }
+
+ 
+}
+
+
+
+@media (max-width: 767px) {
+  .donation {
+    padding: 42px 0;
+  }
+
+  .donation .container {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+  }
+
+  .donation-content {
+    max-width: 300px;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .donation-title {
+    font-size: 25px;
+    letter-spacing: 1.5px;
+    max-width: 220px;
+    margin: 0;
+  }
+
+  .donation-subtitle {
+    margin: 0;
+    font-size: 15px;
+    line-height: 160%;
+  }
+
+  .credit-card {
+    width: 100%;
+    max-width: 281px;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 9px;
+  }
+
+  .credit-card-text {
+    font-size: 15px;
+    letter-spacing: 0.9px;
+    line-height: 110%;
+    margin: 0;
+    white-space: nowrap;       
+  }
+
+  .donation-text {
+    margin: 0;
+    max-width: 280px;           
+    text-align: justify;         
+  }
+
+  .donation-image {
+    width: 260px;                
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 }
