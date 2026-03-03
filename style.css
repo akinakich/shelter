@@ -11,7 +11,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+
 
 }
 
@@ -33,6 +33,9 @@ body {
     list-style: none;
     display: flex;
     gap: 35px;
+    margin: 0;
+    padding: 0;
+
 }
 
 
@@ -95,3 +98,61 @@ body {
     radial-gradient(237.5% 111.8% at 0% 0%, #5B483A 0%, #262425 100%),
     #211F20;
 }
+
+.start-screen-content {
+    padding-top: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 42px;
+}
+
+.hero-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-content {
+  max-width: 460px; 
+}
+
+.hero-text {
+    margin: 42px 0;
+    line-height: 24px;
+    color: var(--color-dark-s, #CDCDCD);
+
+    font-family: Arial;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+
+}
+
+.hero-title {
+    color: var(--color-light-xl, #FFF);
+    margin: 0;
+    font-family: Georgia;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 57.2px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 15px 45px;
+    border-radius: 100px;
+    background: var(--color-primary, #F1CDB3);
+
+    /* make a friend */
+    text-decoration: none;
+    color: var(--color-dark-3xl, #292929);
+    font-family: Georgia;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22.1px;
+    letter-spacing: 1.02px;
+}
+
