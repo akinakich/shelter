@@ -22,7 +22,13 @@ body {
 }
 
 .start-screen {
-  min-height: 908px;
+    background:
+    url("noise_transparent.png") repeat,
+    radial-gradient(237.5% 111.8% at 0% 0%, #5B483A 0%, #262425 100%),
+    #211F20;
+    min-height: 908px;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -66,15 +72,9 @@ body {
     font-weight: 400;
     line-height: 160%; /* 24px */
 }
-.nav-link:hover {
-    text-decoration: none;
-    
-    color: var(--color-light-s, #FAFAFA);
 
-    font-family: Arial;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
+.nav-link:hover {
+    color: var(--color-light-s, #FAFAFA);
 }
 
 
@@ -90,16 +90,7 @@ body {
     line-height: 160%; /* 24px */
 }
 .nav-link-pets:hover {
-    text-decoration: none;
     color: var(--color-dark-3xl, #292929);
-
-
-    /* paragraph-l */
-    font-family: Arial.;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 24px */
 }
 
 .link-active {
@@ -150,6 +141,7 @@ body {
 
 .logo-subtitle {
     color: var(--color-light-xl, #FFF);
+    margin: 0;
 
     font-family: Arial;
     font-size: 13px;
@@ -177,23 +169,17 @@ body {
 
 }
 
-.logo-subtitle {
-    margin: 0;
-}
 
-.start-screen {
-  background:
-    url("noise_transparent.png") repeat,
-    radial-gradient(237.5% 111.8% at 0% 0%, #5B483A 0%, #262425 100%),
-    #211F20;
-}
+
+
 
 .start-screen-content {
-    padding-top: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 42px;
+  flex: 1;
+  padding-top: 90px;       /* как в макете */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;     /* текст по центру по вертикали */
+  gap: 42px;
 }
 
 
@@ -201,6 +187,7 @@ body {
 .hero-text {
     margin: 42px 0;
     line-height: 24px;
+    max-width: 460px;
     color: var(--color-dark-s, #CDCDCD);
 
     font-family: Arial;
@@ -213,6 +200,8 @@ body {
 .hero-title {
     color: var(--color-light-xl, #FFF);
     margin: 0;
+
+
     font-family: Georgia;
     font-size: 44px;
     font-style: normal;
@@ -222,14 +211,20 @@ body {
 
 .hero-content {
   flex: 0 0 460px;
+  padding-bottom: 60px;   /* подбери 40–90px под макет */
+}
+
+.hero {
+  flex: 1;                 /* занимает всё место под хедером */
+  display: flex;
+}
+
+.hero-image {
+  align-self: flex-end;    /* а картинка — вниз */
+  display: block;
 }
 
 
-
-.hero-text {
-
-  max-width: 460px;
-}
 
 .hero-button {
     display: inline-block;
@@ -427,28 +422,9 @@ body {
     letter-spacing: 1.2px;
 }
 .arrow-button-page:hover {
-    display: flex;
-    width: 52px;
-    height: 52px;
-    padding: 14px 0 15px 0;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
     border: none;
-    border-radius: 100px;
-    
     background: var(--color-primary, #F1CDB3);
-
     color: var(--color-dark-3xl, #292929);
-    text-align: center;
-
-    /* h4 */
-    font-family: Georgia;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 115%; /* 23px */
-    letter-spacing: 1.2px;
 }
 .arrow-button-page:active {
     display: flex;
@@ -499,26 +475,8 @@ body {
     letter-spacing: 1.2px;
 }
 .arrow-button-back:hover {
-    display: flex;
-    width: 52px;
-    height: 52px;
-    padding: 14px 13px 15px 12px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 100px;
     background: #FDDCC4;
-
     color: var(--color-dark-s, #CDCDCD);
-    text-align: center;
-
-    /* h4 */
-    font-family: Georgia;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 115%; /* 23px */
-    letter-spacing: 1.2px;
 }
 
 .arrow-button-next {
@@ -544,26 +502,8 @@ body {
     letter-spacing: 1.2px;
 }
 .arrow-button-next:hover {
-    display: flex;
-    width: 52px;
-    height: 52px;
-    padding: 14px 0 15px 0;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100px;
-
     background: #FDDCC4;
-
     color: var(--color-dark-3xl, #292929);
-    text-align: center;
-
-    /* h4 */
-    font-family: Georgia;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 115%; /* 23px */
-    letter-spacing: 1.2px;
 }
 
 
@@ -637,11 +577,7 @@ body {
   text-align: center;
 }
 .card:hover {
-  width: 270px;
   background: #FFF;
-  border-radius: 9px;
-  padding-bottom: 30px;
-  text-align: center;
 }
 
 .pets-image {
@@ -1338,5 +1274,37 @@ body {
 @media (max-width: 767px) {
   .hero-content {
     flex: 0 0 auto;
+  }
+}
+
+/* TABLET: 768–1279 */
+@media (min-width: 768px) and (max-width: 1279px) {
+
+  .start-screen {
+    min-height: 1165px; /* как в макете у Shelter обычно для планшета */
+  }
+
+  .start-screen-content {
+    padding-top: 60px;       /* на планшете меньше отступ */
+    flex-direction: column;  /* текст сверху, щенок снизу */
+    align-items: center;
+    text-align: center;
+    gap: 100px;              /* расстояние между текстом и щенком */
+  }
+
+  .hero-content {
+    flex: 0 0 auto;
+    max-width: 460px;
+    padding-bottom: 0;       /* убираем десктопный отступ */
+  }
+
+  .hero-button {
+    margin: 0 auto;          /* чтобы кнопка была по центру */
+  }
+
+  .hero-image {
+    align-self: center;      /* на планшете щенок по центру */
+    width: 569px;            /* под макет */
+    max-width: 100%;
   }
 }
